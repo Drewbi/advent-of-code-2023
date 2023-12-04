@@ -34,16 +34,11 @@ const convertNumSpelling = (numString) => {
 const result = lines.reduce((acc, curr) => {
     const matches = curr.match(numberRegex)
     const revCurr = curr.split('').reverse().join('');
-    console.log(revCurr)
     const revmatches = revCurr.match(reverseNumberRegex)
     const number = Number(
         convertNumSpelling(matches[0]) +
         convertNumSpelling(revmatches[0])
     )
-    console.log(curr)
-    console.log(matches)
-    console.log(revmatches)
-    console.log(number)
     return acc + number
 }, 0)
 
